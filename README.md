@@ -4,9 +4,18 @@ This tools is a simple cli of mysql for CI.
 
 ## How to install
 
+### download binary
+
+```sh
+wget https://github.com/KamikazeZirou/mysql-ci/releases/download/v0.1.1/mysql-ci-v0.1.1-linux-amd64.tar.gz
+tar xzf mysql-ci-v0.1.1-linux-amd64.tar.gz # `mysql-ci` is created.
+```
+
+### go install
+
 ```sh
 # You need to add "$(go env GOPATH)/bin" to "PATH"
-go install github.com/KamikazeZirou/mysql-ci@v0.1.0
+go install github.com/KamikazeZirou/mysql-ci@v0.1.1
 ```
 
 ## Usage
