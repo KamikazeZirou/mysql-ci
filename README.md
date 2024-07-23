@@ -6,9 +6,9 @@ This tools is a simple cli of mysql for CI.
 
 ```sh
 # You need to add "$(go env GOPATH)/bin" to "PATH"
-go install github.com/KamikazeZirou/mysql-ci@latest
+go install github.com/KamikazeZirou/mysql-ci@v0.1.0
 ```
-go install github.com/KamikazeZirou/mysql-ci@latest
+
 ## Usage
 
 Write a file named 'init.sql' like below.
