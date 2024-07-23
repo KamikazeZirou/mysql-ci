@@ -1,0 +1,31 @@
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-3.4.4
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: mysql
+  name: mysql
+spec:
+  containers:
+  - args:
+    - mysqld
+    image: docker.io/mysql/mysql-server:8.0.28
+    name: mysql
+    ports:
+    - containerPort: 3306
+      hostPort: 3306
+    securityContext:
+      capabilities:
+        drop:
+        - CAP_MKNOD
+        - CAP_NET_RAW
+        - CAP_AUDIT_WRITE
+    tty: true
+    env:
+      - name: MYSQL_ROOT_HOST
+        value: "%"
+      - name: MYSQL_ROOT_PASSWORD
+        value: "password"

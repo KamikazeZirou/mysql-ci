@@ -1,14 +1,15 @@
-PHONY: mysql-up
-mysql-up:
-	podman run \
-		--name "mysql" \
-		-dt \
-		-e MYSQL_ROOT_HOST='%' \
-		-e MYSQL_ROOT_PASSWORD='password' \
-		-p 3306:3306/tcp \
-		"docker.io/mysql/mysql-server:8.0.28"
+PHONY: create
+create:
+	podman play kube mysql.yaml
 
-PHONY: mysql-down
-mysql-down:
-	podman stop "mysql"
-	podman rm "mysql"
+PHONY: up
+up:
+	podman pod start mysql_pod
+
+PHONY: down
+down:
+	podman pod stop mysql_pod
+
+PHONY: rm
+rm:
+	podman pod rm mysql_pod
