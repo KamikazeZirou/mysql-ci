@@ -15,7 +15,7 @@ import (
 func main() {
 	user := flag.String("u", "root", "the user to connect mysql server")
 	password := flag.String("pass", "", "the user to connect mysql server")
-	port := flag.Int("p", 3306, "the port of mysql server")
+	port := flag.Int("port", 3306, "the port of mysql server")
 	host := flag.String("h", "127.0.0.1", "the address of mysql server")
 	query := flag.String("q", "", "the sql query")
 	file := flag.String("f", "", "the sql script file path")
