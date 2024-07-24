@@ -17,6 +17,7 @@ func main() {
 	password := flag.String("pass", "", "the user to connect mysql server")
 	port := flag.Int("port", 3306, "the port of mysql server")
 	host := flag.String("h", "127.0.0.1", "the address of mysql server")
+	dbName := flag.String("d", "", "the database name")
 	query := flag.String("q", "", "the sql query")
 	file := flag.String("f", "", "the sql script file path")
 	flag.Parse()
@@ -25,11 +26,12 @@ func main() {
 	// Connect DB
 	//
 	db, err := sql.Open("mysql", fmt.Sprintf(
-		"%s:%s@tcp(%s:%d)/?parseTime=true&loc=Local&multiStatements=true",
+		"%s:%s@tcp(%s:%d)/%s?parseTime=true&loc=Local&multiStatements=true",
 		*user,
 		*password,
 		*host,
 		*port,
+		*dbName,
 	))
 	if err != nil {
 		log.Fatal("error connecting to mysql:" + err.Error())
