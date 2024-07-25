@@ -7,15 +7,15 @@ This tools is a simple cli of mysql for CI.
 ### download binary
 
 ```sh
-wget https://github.com/KamikazeZirou/mysql-ci/releases/download/v0.1.1/mysql-ci-v0.1.1-linux-amd64.tar.gz
-tar xzf mysql-ci-v0.1.1-linux-amd64.tar.gz # `mysql-ci` is created.
+wget https://github.com/KamikazeZirou/mysql-ci/releases/download/v0.2.0/mysql-ci-v0.2.0-linux-amd64.tar.gz
+tar xzf mysql-ci-v0.2.0-linux-amd64.tar.gz # `mysql-ci` is created.
 ```
 
 ### go install
 
 ```sh
 # You need to add "$(go env GOPATH)/bin" to "PATH"
-go install github.com/KamikazeZirou/mysql-ci@v0.1.1
+go install github.com/KamikazeZirou/mysql-ci@v0.2.0
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ CREATE TABLE `foobar` (
 Then, run a command like below.
 
 ```sh
-mysql-ci -h 127.0.0.1 -p 3306 -pass password -f 'init.sql'
+mysql-ci -h 127.0.0.1 -port 3306 -pass password -f 'init.sql'
 ```
 
 You can directly specify a query by using option '-q' instead of '-f'.
